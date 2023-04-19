@@ -86,7 +86,7 @@ export default class MapWidget extends AbstractWidget {
 
     this.html.append($(`<div id="map"></div>`));
 
-    this.map = new Map("map").setView([46.20222, 6.14569], 13);
+    this.map = new Map("map").setView([52.17969, 5.96147], 13);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 19,
       attribution: "© OpenStreetMap",

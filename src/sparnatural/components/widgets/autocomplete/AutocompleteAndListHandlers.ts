@@ -29,7 +29,7 @@ export abstract class Handler {
       separator +
       "query=" +
       encodeURIComponent(sparql) +
-      "&format=json";
+      "&format=application/sparql-results+json";
     return url;
   }
 
@@ -37,8 +37,20 @@ export abstract class Handler {
     domain: any,
     property: any,
     range: any,
-    data: { results: { bindings: any } }
+    data:any 
   ) {
+    if (data==null) return null;
+    if (data.results==null) 
+    { var bindings =[];
+      for (var nn in data)
+      {
+        var o=data[nn];
+        var oo={uri:{type:"uri",value:o.uri},
+                label:{type:"literal",value:o.label}};
+        bindings.push(oo);
+      }
+      return bindings;
+    }
     return data.results.bindings;
   }
 

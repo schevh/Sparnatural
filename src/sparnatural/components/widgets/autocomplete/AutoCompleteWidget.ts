@@ -88,7 +88,7 @@ export class AutoCompleteWidget extends AbstractWidget {
 
       ajaxSettings: {
         crossDomain: true,
-        timeout: 7000,
+        timeout: 27000,
         dataType: "json",
         method: "GET",
         data: {

@@ -85,12 +85,12 @@ export class ListWidget extends AbstractWidget {
       cache: "default",
     };
     let temp = new LocalCacheData();
-    //this.toggleSpinner()
+    this.toggleSpinner()
     let fetchpromise = temp.fetch(url, init, this.settings.localCacheDataTtl);
     fetchpromise
       .then((response: { json: () => any }) => response.json())
       .then((data: any) => {
-        //this.toggleSpinner("success")
+        this.toggleSpinner("success")
         var items = this.datasourceHandler.listLocation(
           this.startClassVal.type,
           this.objectPropVal.type,

@@ -193,9 +193,11 @@ export class DatesWidget extends AbstractWidget {
     let lbl = "";
 
     if (start != "" && start) {
+      start=new Date(start);
       lbl = lbl.concat(` ${start.toISOString().slice(0, 10)}`);
     }
     if (stop && stop != "") {
+      stop=new Date(stop);
       lbl = lbl.concat(` - ${stop.toISOString().slice(0, 10)}`);
     }
     return lbl;
